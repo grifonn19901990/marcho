@@ -22,8 +22,8 @@ html {
   h5,
   h6,
   p,
-  ol[class],
-  ul[class],
+  ol,
+  ul,
   li,
   figure,
   figcaption,
@@ -34,7 +34,7 @@ html {
   }
   
   img {
-  
+    display: block;
     max-width: 100%;
   }
   
