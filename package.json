@@ -21,5 +21,8 @@
     "jquery": "^3.7.0",
     "sass": "^1.63.4",
     "slick-carousel": "^1.8.1"
+  },
+  "dependencies": {
+    "rateyo": "^2.3.2"
   }
 }

@@ -447,12 +447,143 @@
   &-title {
     text-align: left;
   }
-  &-text{
+
+  &-text {
     margin-bottom: 55px;
   }
-  &-link{
+
+  &-link {
     @extend%btn;
   }
+}
+
+.product {
+  padding: 100px 0 120px;
+  text-align: center;
+  
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 45px;
+    padding-top: 55px;
+
+  }
+
+  &__link {
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+    margin-top: 55px;
+  }
+}
+
+.product__item {
+  max-width: 370px;
+
+  &-img-box {
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  &-link-box {
+    transition: all .3s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: #fff;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(300%);
+  }
+
+  &-link-line::before,
+  &-link-line::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background-color: #ececec;
+    top: 10;
+  }
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-link-line::before {
+    left: 70px;
+  }
+
+  &-link-line::after {
+    right: 70px;
+  }
+
+  &-link {
+    display: inherit;
+
+    path {
+      transition: all .3s;
+    }
+  }
+
+  &-link:hover {
+    path {
+      fill: $accent;
+    }
+  }
+
+  &:hover {
+    .product__item-link-box {
+      transform: translateY(0);
+    }
+  }
+
+  &-title {
+    color: $title;
+    padding: 15px 0 20px;
+  }
+
+  &-price {
+    display: flex;
+    justify-content: center;
+    @extend %roboto-400;
+  }
+
+  &-new-price {
+    padding: 0 12px;
+    color: $title;
+  }
+
+  &-old-price {
+    padding: 0 12px;
+    text-decoration: line-through;
+  }
+
+  &--sale {
+    .product__item-img-box::before {
+      content: 'sale';
+      @extend %btn;
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      line-height: 1;
+    }
+  }
+}
+.star{
+  margin: 0 auto;
 }
 
 @import 'media';
